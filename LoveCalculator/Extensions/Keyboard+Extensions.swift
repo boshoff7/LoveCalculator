@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-extension ViewController {
+extension ViewController: UITextFieldDelegate {
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -18,5 +18,25 @@ extension ViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    func addDoneButton(textField1: UITextField, textField2: UITextField) {
+        let toolBar = UIToolbar()
+        toolBar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.doneTapped))
+        
+        toolBar.setItems([doneButton], animated: false)
+        
+        textField1.inputAccessoryView = toolBar
+        textField2.inputAccessoryView = toolBar
+    }
+    
+    @objc func doneTapped() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

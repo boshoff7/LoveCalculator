@@ -27,12 +27,15 @@ class ViewController: UIViewController, LoveProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        firstNameTextField.delegate       = self
+        secondNameTextField.delegate      = self
         loveManager.delegate              = self
         resultView.alpha                  = 0
         resultView.layer.cornerRadius     = 10
         bottomTrimView.layer.cornerRadius = 10
         topTrimView.layer.cornerRadius    = 10
         self.hideKeyboardWhenTappedAround()
+        addDoneButton(textField1: firstNameTextField, textField2: secondNameTextField)
     }
 
     @IBAction func calculateTapped(_ sender: Any) {
