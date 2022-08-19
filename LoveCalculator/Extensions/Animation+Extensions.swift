@@ -13,11 +13,11 @@ extension ViewController {
     func animateHeart(view: UIView) {
         let animation = CASpringAnimation(keyPath: "transform.scale")
         animation.fromValue = 0.5
-        animation.toValue = 1
-        animation.damping = 1
+        animation.toValue   = 1
+        animation.damping   = 1
         animation.stiffness = 10
-        animation.mass = 3
-        animation.duration = 13
+        animation.mass      = 3
+        animation.duration  = 13
         view.layer.add(animation, forKey: nil)
     }
 }

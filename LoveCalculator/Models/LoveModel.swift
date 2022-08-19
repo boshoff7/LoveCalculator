@@ -8,6 +8,6 @@
 import Foundation
 
 struct LoveModel: Codable {
-    var result: Int
+    var result : Int
     var message: String
 }

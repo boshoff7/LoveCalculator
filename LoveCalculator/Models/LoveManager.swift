@@ -27,7 +27,7 @@ struct LoveManager {
                 do{
                     let tasks = try decoder.decode(LoveModel.self, from: data)
                     let love = tasks
-                    //print("This is the weather:\(love.message)")
+                
                     DispatchQueue.main.async {
                         self.delegate?.fetchLove(love)
                         print("This is love: \(love.message)")
