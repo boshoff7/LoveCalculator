@@ -5,3 +5,7 @@
 - API call
 - Animations
 - isHidden used to hide certain views from the screen
+- Add done button to keyboard toolbar
+- Dismiss keyboard by tapping on screen
+- Extensions
+- UITextfields
